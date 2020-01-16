@@ -72,7 +72,7 @@ int Convmg(char sign,int16_t number, float factor,uint8_t err)
 
 	switch (FLst){
 
-	case 0x80:                    //подсчет отрицательного числа
+	case 0x80:                    //negative number
 
 		nnDataSPI=~number;
 		Ans=nnDataSPI;
@@ -80,7 +80,7 @@ int Convmg(char sign,int16_t number, float factor,uint8_t err)
 		Ans=err-ans;
 		break;
 
-	case 0x00:                    //подсчет положительного числа
+	case 0x00:                    //positive number
 
 		Ans=number;
 		ans=Ans*0.06;

@@ -15,6 +15,7 @@ static int Ans;
 
 
 
+
 //*********USe DEFINE*************//
 
 #define ErrX 187
@@ -79,17 +80,11 @@ int main(void)
 	  X|=DataSPI<<8;
 
 	  Ans = Convmg(DataSPI, X, Factor, ErrX);
+	  Ans+=1200;
+	  uint16_t step = Ans/34;
+	  TIM2->CCR1 = step+30;
 
-	  if(Ans<(-10))
-	  {
-		  TIM2->CCR1 = 95;
-	  }
-	  else if(Ans>10)
-	  {
-		  TIM2->CCR1 = 25;
-	  }
 
-	  LL_mDelay(100);
 
   }
 

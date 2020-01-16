@@ -95,7 +95,7 @@ void PWMInit (void)
 
 	TIM2->ARR = 850;
 
-	TIM2->CCR1 = 58;                               //начальное положение
+	TIM2->CCR1 = 58;                               //first position
 
 	TIM2->CCMR1 |=  TIM_CCMR1_OC1M_2 ;
 	TIM2->CCMR1 |=  TIM_CCMR1_OC1M_1 ;
